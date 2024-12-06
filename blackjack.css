@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Prevent overflow issues on small screens */
+}
+
+h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* Container for Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow cards to wrap on small screens */
+}
+
+#Dealer-cards, #Your-cards {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Wrap cards on small screens */
+    justify-content: center;
+}
+
+/* Card Style */
+#Dealer-cards img, #Your-cards img {
+    height: 150px;
+    width: 105px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    margin: 5px;
+}
+
+#Dealer-cards img:hover, #Your-cards img:hover {
+    transform: scale(1.1);
+}
+
+/* Buttons Styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    width: 150px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Result Message */
+#results {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Modal (for showing result in a centered dialog) */
+#game-over-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#game-over-modal.active {
+    display: flex;
+}
+
+#game-over-modal .modal-content {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#game-over-modal h3 {
+    margin: 0 0 10px;
+}
+
+#game-over-modal p {
+    font-size: 18px;
+}
+
+/* Win condition (Green background) */
+#game-over-modal.win .modal-content {
+    background-color: #4CAF50; /* Green background for Win */
+}
+
+#game-over-modal.win p {
+    color: white;
+}
+
+/* Lose condition (Red background) */
+#game-over-modal.lose .modal-content {
+    background-color: #f44336; /* Red background for Lose */
+}
+
+#game-over-modal.lose p {
+    color: white;
+}
+
+/* Play Again button style */
+#game-over-modal button {
+    margin-top: 20px;
+    background-color: #ff6347;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+#game-over-modal button:hover {
+    background-color: #e55347;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    #Dealer-cards, #Your-cards {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 120px;
+        font-size: 16px;
+    }
+
+    #game-over-modal .modal-content {
+        width: 80%; /* Make the modal smaller on smaller screens */
+        max-width: 350px;
+    }
+
+    #Dealer-cards img, #Your-cards img {
+        height: 120px; /* Smaller cards on small screens */
+        width: 90px;
+    }
+
+    /* Prevent card overflow by adjusting container size */
+    #Dealer-cards, #Your-cards {
+        justify-content: flex-start; /* Align cards to the left on small screens */
+    }
+}

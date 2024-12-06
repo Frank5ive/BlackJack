@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="blackjack.css">
+</head>
+<body>
+    <div class="game-container">
+        <h2>Dealer: <span id="Dealer-sum"></span></h2>
+        <div id="Dealer-cards" class="card-container">
+            <!-- The hidden card will be inserted dynamically by JavaScript -->
+            <img id="hidden" src="./cards/BACK.png" alt="Hidden Card">
+        </div>
+        <h2>You: <span id="your-sum"></span></h2>
+        <div id="Your-cards" class="card-container"></div>
+        <div class="button-container">
+            <button id="hit">Hit</button>
+            <button id="stay">Stay</button>
+        </div>
+        <p id="results"></p>
+
+        <!-- Modal for showing result -->
+        <div id="game-over-modal" class="modal">
+            <div class="modal-content">
+                <h3>Game Over</h3>
+                <p></p>
+                <button>Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="blackjack.js" defer></script>
+</body>
+</html>
